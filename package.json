@@ -2,21 +2,28 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public",
-    "make-test": "node ./makeTest.js;rollup -c;sirv public",
-    "make-dynamic-test": "node ./makeTestDynamic.js;rollup -c;sirv public"
+    "make-test-rollup": "rm -rf public/build; node ./makeTest.js;rollup -c;sirv public",
+    "make-dynamic-test-rollup": "rm -rf public/build; node ./makeTestDynamic.js;rollup -c;sirv public",
+    "make-test-webpack": "rm -rf public/build; node ./makeTest.js;cross-env NODE_ENV=production webpack;sirv public",
+    "make-dynamic-test-webpack": "rm -rf public/build; node ./makeTestDynamic.js;cross-env NODE_ENV=production webpack;sirv public"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "config": "^3.3.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0"
+    "serve": "^11.0.0",
+    "style-loader": "^0.23.1",
+    "svelte": "^3.0.0",
+    "svelte-loader": "2.13.3",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"

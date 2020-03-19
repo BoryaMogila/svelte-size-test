@@ -8,12 +8,12 @@ const imports = [];
 const views = [];
 for(let i = 1; i < (config.componentsCount + 1); i++){
   const component = makeComponent(i);
-  fs.writeFile(`./src/test/component_${i}.svelte`, component, () => 1);
+  fs.writeFileSync(`./src/test/component_${i}.svelte`, component, () => 1);
   imports.push(`import Component_${i} from './test/component_${i}.svelte'`)
   views.push(`<Component_${i} />`)
 }
 
-fs.writeFile(`./src/App.svelte`, `<script>
+fs.writeFileSync(`./src/App.svelte`, `<script>
   ${imports.join('\n')}
 </script>
 ${views.join('\n')}

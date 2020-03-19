@@ -1,3 +1,3 @@
 module.exports = {
-  componentsCount: 100,
+  componentsCount: 500,
 };

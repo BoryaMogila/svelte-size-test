@@ -6,6 +6,11 @@ module.exports = function makeComponent (number) {
       number += 1;
     }
   </script>
+  <style>
+    button {
+      border-radius: 30px;
+    }
+  </style>
   <div>{number} <button on:click={onClick}>Додати 1</button></div>
   `
 }
