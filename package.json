@@ -15,6 +15,7 @@
     "css-loader": "^2.1.1",
     "mini-css-extract-plugin": "^0.6.0",
     "rollup": "^1.20.0",
+    "rollup-plugin-analyzer": "^3.2.2",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
