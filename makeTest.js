@@ -1,11 +1,12 @@
 const fs = require('fs');
+const config = require('config');
 const makeComponent = require('./makeTestComponent');
 const makeDir = require('./makeTestDir');
 
 makeDir();
 const imports = [];
 const views = [];
-for(let i = 1; i < 500; i++){
+for(let i = 1; i < (config.componentsCount + 1); i++){
   const component = makeComponent(i);
   fs.writeFile(`./src/test/component_${i}.svelte`, component, () => 1);
   imports.push(`import Component_${i} from './test/component_${i}.svelte'`)

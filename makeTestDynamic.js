@@ -1,10 +1,11 @@
 const fs = require('fs');
+const config = require('config');
 const makeComponent = require('./makeTestComponent');
 const makeDir = require('./makeTestDir');
 
 makeDir();
 const imports = [];
-for(let i = 1; i < 501; i++){
+for(let i = 1; i < (config.componentsCount + 1); i++){
   const component = makeComponent(i);
   fs.writeFile(`./src/test/component_${i}.svelte`, component, () => 1);
   imports.push(`import('./test/component_${i}.svelte').then(({default: Component}) => components = components.concat(Component))`)

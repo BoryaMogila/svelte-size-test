@@ -3,3 +3,5 @@
 /src/test/
 
 .DS_Store
+.idea
+yarn-error.log
